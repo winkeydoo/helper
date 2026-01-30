@@ -3,367 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дидактический материал | Русская литература</title>
+    <title>Литературный портал 8-9 класс</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="menu-container">
-        <button class="menu-btn" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </button>
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h2>Навигация</h2>
-                <button class="close-btn" onclick="toggleMenu()">&times;</button>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-feather-alt"></i>
+                <span>Литература</span>
             </div>
-            <ul>
-                <li><a href="#hero">Главная</a></li>
-                <li><a href="#grade-9">9 Класс</a></li>
-                <li><a href="#grade-8">8 Класс</a></li>
-                <li><a href="#authors">Авторы</a></li>
-            </ul>
-        </nav>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Поиск автора...">
+            </div>
+            <ul id="authorsList" class="authors-list">
+                </ul>
+        </aside>
+
+        <main class="main-content" id="mainContainer">
+            <div class="welcome-screen">
+                <h1>Дедикативный материал</h1>
+                <h2>по русской литературе 8-9 классов</h2>
+                <p class="description">
+                    Добро пожаловать в интерактивную библиотеку. Этот ресурс создан для углубленного изучения шедевров классической литературы. 
+                    Здесь собраны истории создания произведений, тексты, аудиокниги, экранизации и театральные постановки.
+                </p>
+                <div class="instruction">
+                    <i class="fas fa-arrow-left"></i> Выберите автора в меню слева, чтобы начать.
+                </div>
+            </div>
+        </main>
     </div>
 
-    <header id="hero" class="hero-section">
-        <div class="hero-content">
-            <h1>Дидактический материал</h1>
-            <p class="subtitle">по русской литературе 8-9 классов</p>
-            <div class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
+    <div id="workModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Название</h2>
+                <h3 id="modalAuthor">Автор</h3>
+            </div>
+            
+            <div class="modal-body">
+                <div class="history-section">
+                    <h4><i class="fas fa-history"></i> История создания</h4>
+                    <p id="modalHistory">Текст истории...</p>
+                </div>
+
+                <div class="resources-grid">
+                    <a href="#" target="_blank" id="btnText" class="res-card">
+                        <i class="fas fa-book-reader"></i>
+                        <span>Текст</span>
+                    </a>
+                    <a href="#" target="_blank" id="btnAudio" class="res-card">
+                        <i class="fas fa-headphones"></i>
+                        <span>Аудиокнига</span>
+                    </a>
+                    <a href="#" target="_blank" id="btnMovie" class="res-card">
+                        <i class="fas fa-film"></i>
+                        <span>Экранизация</span>
+                    </a>
+                    <a href="#" target="_blank" id="btnTheater" class="res-card">
+                        <i class="fas fa-theater-masks"></i>
+                        <span>Спектакль</span>
+                    </a>
+                    <a href="#" target="_blank" id="btnIllustrations" class="res-card">
+                        <i class="fas fa-images"></i>
+                        <span>Иллюстрации</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
-
-    <main class="container">
-        
-        <section id="grade-9" class="grade-section">
-            <h2 class="section-title">Программа 9 класса</h2>
-            
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Раздел 1: «Странности любви» (24 часа)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>Уильям Шекспир</h3>
-                                <span class="work-type">Сонеты</span>
-                            </div>
-                            <p class="work-desc">История создания сонетов. Сонеты, посвященные смуглой возлюбленной.</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Текст</a>
-                                <a href="#" class="btn-link"><i class="fas fa-headphones"></i> Аудио</a>
-                                <a href="#" class="btn-link"><i class="fas fa-user"></i> Биография</a>
-                            </div>
-                        </div>
-
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>П.Н. Васильев</h3>
-                                <span class="work-type">Лирика</span>
-                            </div>
-                            <p class="work-desc">Любовная лирика. Красивые признания. Удивительная личность с неиссякаемым талантом.</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Текст</a>
-                                <a href="#" class="btn-link"><i class="fas fa-headphones"></i> Аудио</a>
-                            </div>
-                        </div>
-
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.С. Пушкин</h3>
-                                <span class="work-type">Поэма «Цыганы» и лирика</span>
-                            </div>
-                            <p class="work-desc">Эволюция любовной лирики. Адресаты лирики. Поэма «Цыганы».</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Текст</a>
-                                <a href="#" class="btn-link"><i class="fas fa-film"></i> Экранизация</a>
-                            </div>
-                        </div>
-
-                         <div class="work-card">
-                            <div class="work-header">
-                                <h3>И.С. Тургенев</h3>
-                                <span class="work-type">Повесть «Ася»</span>
-                            </div>
-                            <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Текст</a>
-                                <a href="#" class="btn-link"><i class="fas fa-film"></i> Фильм</a>
-                            </div>
-                        </div>
-                        
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.И. Куприн</h3>
-                                <span class="work-type">Повесть «Олеся»</span>
-                            </div>
-                            <p class="work-desc">Певец возвышенной любви.</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Текст</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Раздел 2: «Тема маленького человека» (24 часа)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                        <div class="work-card full-features">
-                            <div class="work-header">
-                                <h3>Н.В. Гоголь</h3>
-                                <span class="work-type">Повесть «Шинель»</span>
-                            </div>
-                            <p class="work-desc">История создания. Тема маленького человека.</p>
-                            <div class="grid-links">
-                                <a href="#" class="g-btn"><i class="fas fa-align-left"></i> Текст</a>
-                                <a href="#" class="g-btn"><i class="fas fa-headphones-alt"></i> Аудиокнига</a>
-                                <a href="#" class="g-btn"><i class="fas fa-video"></i> Экранизация</a>
-                                <a href="#" class="g-btn"><i class="fas fa-image"></i> Иллюстрации</a>
-                                <a href="#" class="g-btn"><i class="fas fa-theater-masks"></i> Спектакль</a>
-                                <a href="#" class="g-btn"><i class="fas fa-info-circle"></i> Биография</a>
-                            </div>
-                        </div>
-
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>Ф.М. Достоевский</h3>
-                                <span class="work-type">Роман «Бедные люди»</span>
-                            </div>
-                             <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Читать</a>
-                            </div>
-                        </div>
-
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>Л.Н. Толстой</h3>
-                                <span class="work-type">Рассказ «После бала»</span>
-                            </div>
-                             <div class="work-links">
-                                <a href="#" class="btn-link"><i class="fas fa-book-open"></i> Читать</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>Раздел 4: «Тайна человеческой души» (24 часа)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                         <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.С. Пушкин</h3>
-                                <span class="work-type">«Пиковая дама»</span>
-                            </div>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.П. Чехов</h3>
-                                <span class="work-type">Маленькая трилогия</span>
-                            </div>
-                            <p class="work-desc">«Попрыгунья», «Ионыч», «Человек в футляре». История о потерянном счастье.</p>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>Н.С. Лесков</h3>
-                                <span class="work-type">«Жемчужное ожерелье»</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="grade-8" class="grade-section">
-            <h2 class="section-title">Программа 8 класса</h2>
-
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>I Четверть: Притчи и легенды. Дети и взрослые (17 часов)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <table class="syllabus-table">
-                        <thead>
-                            <tr>
-                                <th>№</th>
-                                <th>Тема</th>
-                                <th>Цели / Детали</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Вводный урок. Отражение детства в литературе.</td>
-                                <td>Понятия: романтизм, реализм, символ, подтекст.</td>
-                            </tr>
-                            <tr>
-                                <td>2-5</td>
-                                <td><strong>В.Г. Распутин «Уроки французского»</strong></td>
-                                <td>
-                                    Образ учителя. Смысл названия. Нравственные проблемы. <br>
-                                    <a href="#" class="mini-link">Анализ текста</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6-8</td>
-                                <td><strong>Ч.Т. Айтматов «Первый учитель»</strong></td>
-                                <td>Образ Дюйшена и Алтынай. Роль учителя.</td>
-                            </tr>
-                            <tr>
-                                <td>9-10</td>
-                                <td>«Красное яблоко» (Ч.Т. Айтматов)</td>
-                                <td>Взаимодействие мира детей и взрослых.</td>
-                            </tr>
-                            <tr>
-                                <td>11-12</td>
-                                <td>С.Н. Жунусов «Прозрение»</td>
-                                <td>Образ главного героя. Биография автора.</td>
-                            </tr>
-                            <tr>
-                                <td>13-16</td>
-                                <td><strong>В.П. Астафьев «Фотография, на которой меня нет»</strong></td>
-                                <td>История, память, дети войны.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>II Четверть: Человек и природа. Любовь (16 часов)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>У. Шекспир</h3>
-                                <span class="work-type">«Ромео и Джульетта»</span>
-                            </div>
-                            <p class="work-desc">Вечные образы. Трагедия любви. Конфликт семей.</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link">Читать</a>
-                                <a href="#" class="btn-link">Смотреть</a>
-                            </div>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.С. Пушкин</h3>
-                                <span class="work-type">«Капитанская дочка»</span>
-                            </div>
-                            <p class="work-desc">Образы Гринева, Пугачева, Маши Мироновой. Честь и долг.</p>
-                            <div class="work-links">
-                                <a href="#" class="btn-link">Полный текст</a>
-                                <a href="#" class="btn-link">Историческая справка</a>
-                            </div>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>Лирика о любви</h3>
-                                <span class="work-type">Пушкин, Тютчев, О. Сулейменов</span>
-                            </div>
-                            <p class="work-desc">«Я помню чудное мгновенье», «Последнее слово акына Смета».</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>III Четверть: Сатира и юмор (20 часов)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                         <div class="work-card full-features">
-                            <div class="work-header">
-                                <h3>Н.В. Гоголь</h3>
-                                <span class="work-type">Комедия «Ревизор»</span>
-                            </div>
-                            <p class="work-desc">Хлестаковщина, чиновничество, страх.</p>
-                             <div class="grid-links">
-                                <a href="#" class="g-btn">Текст</a>
-                                <a href="#" class="g-btn">Театр</a>
-                                <a href="#" class="g-btn">Критика</a>
-                            </div>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А.П. Чехов</h3>
-                                <span class="work-type">Рассказы</span>
-                            </div>
-                            <p class="work-desc">«Хамелеон», «Толстый и тонкий», «Пересолил».</p>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>В.М. Шукшин</h3>
-                                <span class="work-type">Рассказы</span>
-                            </div>
-                            <p class="work-desc">«Чудик», «Сельские жители», «Сапожки».</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>IV Четверть: Романтический герой (16 часов)</span>
-                    <i class="fas fa-plus"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="topic-list">
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>М.Ю. Лермонтов</h3>
-                                <span class="work-type">Поэма «Мцыри»</span>
-                            </div>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А. Грин</h3>
-                                <span class="work-type">«Алые паруса»</span>
-                            </div>
-                            <p class="work-desc">Ассоль и Грей. Мечта и реальность.</p>
-                        </div>
-                        <div class="work-card">
-                            <div class="work-header">
-                                <h3>А. де Сент-Экзюпери</h3>
-                                <span class="work-type">«Маленький принц»</span>
-                            </div>
-                            <p class="work-desc">«Мы в ответе за тех, кого приручили».</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>В РАЗРАБОТКЕ!!!!</p>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

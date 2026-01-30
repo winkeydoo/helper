@@ -3,81 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Литературный портал 8-9 класс</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Русская Литература | 8-9 Класс</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="app-container">
+    <div class="layout">
         <aside class="sidebar">
-            <div class="logo">
-                <i class="fas fa-feather-alt"></i>
+            <div class="brand">
+                <i class="fas fa-book-reader"></i>
                 <span>Литература</span>
             </div>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Поиск автора...">
+            
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Найти автора...">
+                <i class="fas fa-search"></i>
             </div>
-            <ul id="authorsList" class="authors-list">
+
+            <ul id="authorsList" class="authors-nav">
                 </ul>
         </aside>
 
-        <main class="main-content" id="mainContainer">
-            <div class="welcome-screen">
-                <h1>Дедикативный материал</h1>
-                <h2>по русской литературе 8-9 классов</h2>
-                <p class="description">
-                    Добро пожаловать в интерактивную библиотеку. Этот ресурс создан для углубленного изучения шедевров классической литературы. 
-                    Здесь собраны истории создания произведений, тексты, аудиокниги, экранизации и театральные постановки.
-                </p>
-                <div class="instruction">
-                    <i class="fas fa-arrow-left"></i> Выберите автора в меню слева, чтобы начать.
-                </div>
+        <main class="content-area">
+            <div id="welcomeScreen" class="welcome-box">
+                <h1>Библиотека 8-9 классы</h1>
+                <p>Выберите автора в меню слева, чтобы открыть список произведений и материалы к ним.</p>
+                <div class="arrow-hint"><i class="fas fa-arrow-left"></i> Начните здесь</div>
             </div>
+
+            <div id="worksContainer" class="works-container"></div>
         </main>
-    </div>
-
-    <div id="workModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2 id="modalTitle">Название</h2>
-                <h3 id="modalAuthor">Автор</h3>
-            </div>
-            
-            <div class="modal-body">
-                <div class="history-section">
-                    <h4><i class="fas fa-history"></i> История создания</h4>
-                    <p id="modalHistory">Текст истории...</p>
-                </div>
-
-                <div class="resources-grid">
-                    <a href="#" target="_blank" id="btnText" class="res-card">
-                        <i class="fas fa-book-reader"></i>
-                        <span>Текст</span>
-                    </a>
-                    <a href="#" target="_blank" id="btnAudio" class="res-card">
-                        <i class="fas fa-headphones"></i>
-                        <span>Аудиокнига</span>
-                    </a>
-                    <a href="#" target="_blank" id="btnMovie" class="res-card">
-                        <i class="fas fa-film"></i>
-                        <span>Экранизация</span>
-                    </a>
-                    <a href="#" target="_blank" id="btnTheater" class="res-card">
-                        <i class="fas fa-theater-masks"></i>
-                        <span>Спектакль</span>
-                    </a>
-                    <a href="#" target="_blank" id="btnIllustrations" class="res-card">
-                        <i class="fas fa-images"></i>
-                        <span>Иллюстрации</span>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="script.js"></script>

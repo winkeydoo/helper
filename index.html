@@ -192,7 +192,7 @@ body {
 }
 
 .work-content.active {
-    max-height: 800px;
+    max-height: 1000px;
     transition: max-height 0.5s ease-in;
 }
 
@@ -251,6 +251,15 @@ body {
     border-radius: 12px;
 }
 
+.res-link .count-badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+    background: #3498db;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
 .actions {
     margin-top: 20px;
     display: flex;
@@ -293,7 +302,7 @@ body {
     background-color: #fefefe;
     border-radius: 15px;
     width: 80%;
-    max-width: 800px;
+    max-width: 900px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -369,6 +378,42 @@ body {
 
 .res-card:hover i { color: var(--accent); }
 
+.video-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    transition: all 0.2s;
+}
+
+.video-item:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateX(3px);
+}
+
+.video-item i {
+    color: #e74c3c;
+    font-size: 0.8rem;
+}
+
+.video-item:hover i {
+    color: white;
+}
+
 @media (max-width: 768px) {
     .app-container { flex-direction: column; }
     .sidebar { width: 100%; height: auto; max-height: 40vh; }
@@ -434,9 +479,9 @@ const libraryData = [
                 history: "Исторический роман, написанный в 1836 году. Пушкин работал над ним во время изучения архивов пугачёвского бунта. Он специально ездил на Урал и в Поволжье, чтобы пообщаться с очевидцами событий.",
                 links: {
                     text: "https://ilibrary.ru/text/107/p.1/index.html",
-                    audio: "https://akniga.org/pushkin-aleksandr-kapitanskaja-dochka",
-                    movie: "https://my.mail.ru/video/embed/1552063754705842730",
-                    theater: "https://www.youtube.com/watch?v=3T-a7Cfs1vM",
+                    audio: ["https://www.youtube.com/watch?v=DGdPJPvHJA0"],
+                    theater: ["https://www.youtube.com/watch?v=d2su6AVDHFg"],
+                    movie: ["https://www.youtube.com/watch?v=aK7LP2ipWQY"],
                     images: "https://www.google.com/search?tbm=isch&q=иллюстрации+капитанская+дочка"
                 }
             },
@@ -445,9 +490,9 @@ const libraryData = [
                 history: "Мистическая повесть 1834 года. Сюжет был подсказан князем Голицыным, который рассказал Пушкину историю о секрете трёх карт. Пушкин превратил анекдот в глубокую психологическую драму о судьбе и азарте.",
                 links: {
                     text: "https://ilibrary.ru/text/480/index.html",
-                    audio: "https://www.youtube.com/watch?v=UJQ7gTQm4dU",
-                    movie: "https://vk.com/video-165903_456245624",
-                    theater: "https://www.maly.ru/spectacle/view?name=dama",
+                    audio: ["https://www.youtube.com/watch?v=1Xw3tZe1ujI"],
+                    theater: ["https://www.youtube.com/watch?v=FcHHNZdNZt4"],
+                    movie: ["https://www.youtube.com/watch?v=hvW37lK1nfM"],
                     images: "https://www.google.com/search?tbm=isch&q=пиковая+дама+иллюстрации"
                 }
             },
@@ -456,9 +501,9 @@ const libraryData = [
                 history: "Поэма, завершенная в 1824 году. Одно из последних романтических произведений поэта («южных поэм»). В ней Пушкин развенчивает миф о «естественном человеке», показывая, что страсти кипят везде.",
                 links: {
                     text: "https://ilibrary.ru/text/445/index.html",
-                    audio: "https://yandex.kz/video/preview/4581411374070200391",
-                    movie: "https://www.youtube.com/watch?v=wpP2j6O_1rY",
-                    theater: "https://www.youtube.com/watch?v=8d7O_h9e2Gk",
+                    audio: ["https://www.youtube.com/watch?v=Xg4lQKtF7og", "https://www.youtube.com/watch?v=9xJqPUXOvio"],
+                    theater: ["https://www.youtube.com/watch?v=mazh5MGA9pE"],
+                    movie: [],
                     images: "https://www.google.com/search?tbm=isch&q=поэма+цыганы+иллюстрации"
                 }
             }
@@ -472,9 +517,9 @@ const libraryData = [
                 history: "Повесть вышла в 1842 году. Замысел возник из канцелярского анекдота о чиновнике, потерявшем ружьё. Гоголь трансформировал смешную историю в трагедию «маленького человека», для которого шинель стала смыслом жизни.",
                 links: {
                     text: "https://ilibrary.ru/text/980/p.1/index.html",
-                    audio: "https://akniga.org/gogol-nikolaj-shinel",
-                    movie: "https://www.youtube.com/watch?v=9E4A1r_z2F0",
-                    theater: "https://www.culture.ru/live/movies/8811/shinel",
+                    audio: ["https://www.youtube.com/watch?v=VfmueRZCT-I"],
+                    theater: ["https://www.youtube.com/watch?v=JlUR9fExFeM"],
+                    movie: ["https://www.youtube.com/watch?v=TPlNf_nTVkY"],
                     images: "https://www.google.com/search?tbm=isch&q=шинель+гоголь+иллюстрации"
                 }
             },
@@ -483,9 +528,9 @@ const libraryData = [
                 history: "Комедия 1836 года. Сюжет подсказал Пушкин. Гоголь хотел собрать «в одну кучу» всё дурное в России и посмеяться над этим. Пьеса вызвала грандиозный скандал при дворе Николая I.",
                 links: {
                     text: "https://ilibrary.ru/text/473/p.1/index.html",
-                    audio: "https://akniga.org/gogol-nikolaj-revizor",
-                    movie: "https://www.kinopoisk.ru/film/43957/", 
-                    theater: "https://www.youtube.com/watch?v=KZE9j6C4ZvU",
+                    audio: ["https://www.youtube.com/watch?v=1VixKwbPr-w"],
+                    theater: ["https://www.youtube.com/watch?v=cbOJsvs6_HQ"],
+                    movie: ["https://www.youtube.com/watch?v=HykkSSdeyk0", "https://www.youtube.com/watch?v=UIM9wSOzJV0", "https://www.youtube.com/watch?v=EpaAUdlvKRU"],
                     images: "https://www.google.com/search?tbm=isch&q=ревизор+иллюстрации"
                 }
             }
@@ -499,9 +544,9 @@ const libraryData = [
                 history: "Романтическая поэма 1839 года. Замысел возник после поездки Лермонтова по Военно-Грузинской дороге. Образ Мцыри стал символом свободы и борьбы за независимость.",
                 links: {
                     text: "https://ilibrary.ru/text/991/index.html",
-                    audio: "https://knigavuhe.org/book/mcyri/",
-                    movie: "https://www.youtube.com/watch?v=7-7T9f_hF_Q",
-                    theater: "https://www.youtube.com/watch?v=YWLUfwVhDo4",
+                    audio: ["https://www.youtube.com/watch?v=Bie1TnmBc70"],
+                    theater: ["https://www.youtube.com/watch?v=WrctEJxDA1Q"],
+                    movie: [],
                     images: "https://www.google.com/search?tbm=isch&q=мцыри+иллюстрации"
                 }
             }
@@ -515,9 +560,9 @@ const libraryData = [
                 history: "Трагедия написана около 1595 года. Шекспир углубил характеры героев, превратив их в вечный символ любви, побеждающей вражду. Перевод Щепкиной-Куперник.",
                 links: {
                     text: "https://ilibrary.ru/text/4550/p.1/index.html",
-                    audio: "https://akniga.org/shekspir-ujllam-romeo-i-dzhuletta",
-                    movie: "https://www.kinopoisk.ru/film/1966/", 
-                    theater: "https://www.youtube.com/watch?v=jvD2X5i4w4E",
+                    audio: ["https://www.youtube.com/watch?v=6qbRjngnXJ8"],
+                    theater: ["https://www.youtube.com/watch?v=0G6Kbg79g9A"],
+                    movie: ["https://www.youtube.com/watch?v=IWpBgAvHcj8"],
                     images: "https://www.google.com/search?tbm=isch&q=romeo+and+juliet+illustrations"
                 }
             }
@@ -531,9 +576,9 @@ const libraryData = [
                 history: "Повесть-феерия, законченная в 1923 году. Идея родилась, когда Грин увидел в витрине игручую лодочку с парусом. Он «перекрасил» его в алый цвет — символ исполнившейся мечты.",
                 links: {
                     text: "https://ilibrary.ru/text/1845/p.1/index.html",
-                    audio: "https://akniga.org/grin-aleksandr-alye-parusa",
-                    movie: "https://m.ok.ru/video/353748912677",
-                    theater: "https://www.youtube.com/watch?v=Y5Q5lQXL7as",
+                    audio: ["https://www.youtube.com/watch?v=VYQi1Bc2U14"],
+                    theater: ["https://www.youtube.com/watch?v=i0h6tllIEmE"],
+                    movie: ["https://www.youtube.com/watch?v=5YzwW4hxrx4"],
                     images: "https://www.google.com/search?tbm=isch&q=алые+паруса+иллюстрации"
                 }
             }
@@ -547,9 +592,9 @@ const libraryData = [
                 history: "Аллегорическая повесть-сказка, написанная в 1942 году в Нью-Йорке. Рисунки в книге выполнены самим автором. Философская история о долге, верности и ответственности.",
                 links: {
                     text: "https://deti-online.com/skazki/malenkiy-princ/",
-                    audio: "https://akniga.org/ekzuperi-antuan-de-malenkij-princ",
-                    movie: "https://www.kinopoisk.ru/film/677856/", 
-                    theater: "https://www.youtube.com/watch?v=3C4y1uCmg4Q",
+                    audio: ["https://www.youtube.com/watch?v=DUJlTHXWGNE"],
+                    theater: ["https://www.youtube.com/watch?v=S5Rt9AaGgbw"],
+                    movie: ["https://www.youtube.com/watch?v=BNAVhxwdJEE"],
                     images: "https://www.google.com/search?tbm=isch&q=маленький+принц+рисунки"
                 }
             }
@@ -562,10 +607,10 @@ const libraryData = [
                 title: "Чудик",
                 history: "Рассказы Шукшина посвящены простым деревенским людям со своеобразным характером. Герои «чудики» обладают чистой душой и стремлением к правде.",
                 links: {
-                    text: "http://lib.ru/SHUKSHIN/chudik.txt",
-                    audio: "https://www.youtube.com/playlist?list=PLhu1fPfo8EPJ3n6JgGNexE3z8JkG8s1zU",
-                    movie: "https://www.kinopoisk.ru/film/46046/", 
-                    theater: "https://www.youtube.com/watch?v=9h9SCA4H6zI",
+                    text: "https://lib.ru/SHUKSHIN/shukshin_chudik.txt",
+                    audio: ["https://www.youtube.com/watch?v=hfKeg-58rPo"],
+                    theater: [],
+                    movie: [],
                     images: "https://www.google.com/search?tbm=isch&q=шукшин+чудик+иллюстрации"
                 }
             }
@@ -579,9 +624,9 @@ const libraryData = [
                 history: "Повесть 1858 года. Написана в Германии. Тургенев ставит вопрос о «лишних людях» и их неспособности к сильным поступкам ради любви.",
                 links: {
                     text: "https://ilibrary.ru/text/1097/p.1/index.html",
-                    audio: "https://akniga.org/turgenev-ivan-asya",
-                    movie: "https://vk.com/video-150471134_456240222",
-                    theater: "https://www.youtube.com/watch?v=02jP5C1q1dU",
+                    audio: ["https://www.youtube.com/watch?v=r7murt_YLYE"],
+                    theater: [],
+                    movie: [],
                     images: "https://www.google.com/search?tbm=isch&q=тургенев+ася+иллюстрации"
                 }
             }
@@ -620,6 +665,10 @@ function showAuthorWorks(authorData) {
     `;
 
     authorData.works.forEach((work, index) => {
+        const hasAudio = work.links.audio && work.links.audio.length > 0;
+        const hasTheater = work.links.theater && work.links.theater.length > 0;
+        const hasMovie = work.links.movie && work.links.movie.length > 0;
+        
         htmlContent += `
             <div class="work-card" data-work="${index}">
                 <div class="work-card-header" onclick="toggleWork(this)">
@@ -635,10 +684,40 @@ function showAuthorWorks(authorData) {
                                 <span>Читать текст</span>
                                 <span class="rec-badge">Рекомендуем</span>
                             </a>
-                            ${work.links.audio ? `<a href="${work.links.audio}" target="_blank" class="res-link"><i class="fas fa-headphones"></i><span>Аудиокнига</span></a>` : ''}
-                            ${work.links.movie ? `<a href="${work.links.movie}" target="_blank" class="res-link"><i class="fas fa-film"></i><span>Экранизация</span></a>` : ''}
-                            ${work.links.theater ? `<a href="${work.links.theater}" target="_blank" class="res-link"><i class="fas fa-theater-masks"></i><span>Спектакль</span></a>` : ''}
-                            ${work.links.images ? `<a href="${work.links.images}" target="_blank" class="res-link"><i class="fas fa-images"></i><span>Иллюстрации</span></a>` : ''}
+                            ${hasAudio ? `
+                            <div class="res-link" style="flex-direction:column;align-items:flex-start;">
+                                <div style="display:flex;align-items:center;gap:10px;width:100%;">
+                                    <i class="fas fa-headphones"></i>
+                                    <span>Аудиокнига${work.links.audio.length > 1 ? ' (' + work.links.audio.length + ' варианта)' : ''}</span>
+                                    ${work.links.audio.length > 1 ? '<span class="count-badge">' + work.links.audio.length + '</span>' : ''}
+                                </div>
+                                ${work.links.audio.length > 1 ? '<div class="video-list" style="width:100%;margin-top:8px;">' + work.links.audio.map((link, i) => `<a href="${link}" target="_blank" class="video-item"><i class="fas fa-play-circle"></i> Вариант ${i+1}</a>`).join('') + '</div>' : ''}
+                                ${work.links.audio.length === 1 ? `<a href="${work.links.audio[0]}" target="_blank" class="video-item" style="margin-top:8px;width:100%;"><i class="fas fa-play-circle"></i> Слушать</a>` : ''}
+                            </div>` : ''}
+                            ${hasTheater ? `
+                            <div class="res-link" style="flex-direction:column;align-items:flex-start;">
+                                <div style="display:flex;align-items:center;gap:10px;width:100%;">
+                                    <i class="fas fa-theater-masks"></i>
+                                    <span>Спектакль${work.links.theater.length > 1 ? ' (' + work.links.theater.length + ' варианта)' : ''}</span>
+                                </div>
+                                ${work.links.theater.length > 1 ? '<div class="video-list" style="width:100%;margin-top:8px;">' + work.links.theater.map((link, i) => `<a href="${link}" target="_blank" class="video-item"><i class="fas fa-play-circle"></i> Постановка ${i+1}</a>`).join('') + '</div>' : ''}
+                                ${work.links.theater.length === 1 ? `<a href="${work.links.theater[0]}" target="_blank" class="video-item" style="margin-top:8px;width:100%;"><i class="fas fa-play-circle"></i> Смотреть спектакль</a>` : ''}
+                            </div>` : ''}
+                            ${hasMovie ? `
+                            <div class="res-link" style="flex-direction:column;align-items:flex-start;">
+                                <div style="display:flex;align-items:center;gap:10px;width:100%;">
+                                    <i class="fas fa-film"></i>
+                                    <span>Экранизация${work.links.movie.length > 1 ? ' (' + work.links.movie.length + ' фильма)' : ''}</span>
+                                    ${work.links.movie.length > 1 ? '<span class="count-badge">' + work.links.movie.length + '</span>' : ''}
+                                </div>
+                                ${work.links.movie.length > 1 ? '<div class="video-list" style="width:100%;margin-top:8px;">' + work.links.movie.map((link, i) => `<a href="${link}" target="_blank" class="video-item"><i class="fas fa-play-circle"></i> Фильм ${i+1}</a>`).join('') + '</div>' : ''}
+                                ${work.links.movie.length === 1 ? `<a href="${work.links.movie[0]}" target="_blank" class="video-item" style="margin-top:8px;width:100%;"><i class="fas fa-play-circle"></i> Смотреть фильм</a>` : ''}
+                            </div>` : ''}
+                            ${work.links.images ? `
+                            <a href="${work.links.images}" target="_blank" class="res-link">
+                                <i class="fas fa-images"></i>
+                                <span>Иллюстрации</span>
+                            </a>` : ''}
                         </div>
                         <div class="actions">
                             <button class="btn-primary" onclick="openModal('${authorData.name}', ${index}, event)">
@@ -677,34 +756,46 @@ function openModal(authorName, workIndex, event) {
 
     document.getElementById('modalTitle').textContent = work.title;
     document.getElementById('modalAuthor').textContent = author.name;
-    document.getElementById('modalHistory').innerHTML = `<p>${work.history}</p><p style="margin-top:15px;color:#666;"><strong>Полная история создания:</strong><br>Данное произведение входит в школьную программу 8-9 классов. Для углубленного изучения рекомендуется ознакомиться с оригинальным текстом на сайте ilibrary.ru или других литературных ресурсах.</p>`;
+    document.getElementById('modalHistory').innerHTML = `<p>${work.history}</p><p style="margin-top:15px;color:#666;"><strong>Полная история создания:</strong><br>Данное произведение входит в школьную программу 8-9 классов. Для углубленного изучения рекомендуется ознакомиться с оригинальным текстом.</p>`;
 
-    const resourcesHtml = `
+    let resourcesHtml = `
         <a href="${work.links.text}" target="_blank" class="res-card">
             <i class="fas fa-book-reader"></i>
             <span>Текст произведения</span>
         </a>
-        ${work.links.audio ? `
-        <a href="${work.links.audio}" target="_blank" class="res-card">
+    `;
+    
+    if (work.links.audio && work.links.audio.length > 0) {
+        resourcesHtml += `
+        <a href="${work.links.audio[0]}" target="_blank" class="res-card">
             <i class="fas fa-headphones"></i>
-            <span>Аудиокнига</span>
-        </a>` : ''}
-        ${work.links.movie ? `
-        <a href="${work.links.movie}" target="_blank" class="res-card">
-            <i class="fas fa-film"></i>
-            <span>Экранизация</span>
-        </a>` : ''}
-        ${work.links.theater ? `
-        <a href="${work.links.theater}" target="_blank" class="res-card">
+            <span>Аудиокнига${work.links.audio.length > 1 ? ' (' + work.links.audio.length + ')' : ''}</span>
+        </a>`;
+    }
+    
+    if (work.links.theater && work.links.theater.length > 0) {
+        resourcesHtml += `
+        <a href="${work.links.theater[0]}" target="_blank" class="res-card">
             <i class="fas fa-theater-masks"></i>
-            <span>Спектакль</span>
-        </a>` : ''}
-        ${work.links.images ? `
+            <span>Спектакль${work.links.theater.length > 1 ? ' (' + work.links.theater.length + ')' : ''}</span>
+        </a>`;
+    }
+    
+    if (work.links.movie && work.links.movie.length > 0) {
+        resourcesHtml += `
+        <a href="${work.links.movie[0]}" target="_blank" class="res-card">
+            <i class="fas fa-film"></i>
+            <span>Экранизация${work.links.movie.length > 1 ? ' (' + work.links.movie.length + ')' : ''}</span>
+        </a>`;
+    }
+    
+    if (work.links.images) {
+        resourcesHtml += `
         <a href="${work.links.images}" target="_blank" class="res-card">
             <i class="fas fa-images"></i>
             <span>Иллюстрации</span>
-        </a>` : ''}
-    `;
+        </a>`;
+    }
     
     document.getElementById('modalResources').innerHTML = resourcesHtml;
     modal.style.display = "flex";

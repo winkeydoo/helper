@@ -1,0 +1,81 @@
+name: Build Site
+
+on:
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create structure
+        run: |
+          mkdir -p pushkin/kapitanskaya_dochka pushkin/pikovaya_dama pushkin/tsygani
+          mkdir -p gogol/shinel gogol/revizor
+          mkdir -p lermontov/mcyri
+          mkdir -p shekspir/romeo_i_dzhuletta
+          mkdir -p grin/alye_parusa
+          mkdir -p ekzuperi/malenkiy_princ
+          mkdir -p shukshin/chudik
+          mkdir -p turgenev/asya
+          
+          for author in pushkin gogol lermontov shekspir grin ekzuperi shukshin turgenev; do
+            echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../?a='$author'"</script></head><body></body></html>' > "$author/index.html"
+          done
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=pushkin&w=kapitanskaya_dochka"</script></head><body></body></html>' > pushkin/kapitanskaya_dochka/index.html
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=pushkin&w=pikovaya_dama"</script></head><body></body></html>' > pushkin/pikovaya_dama/index.html
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=pushkin&w=tsygani"</script></head><body></body></html>' > pushkin/tsygani/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=gogol&w=shinel"</script></head><body></body></html>' > gogol/shinel/index.html
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=gogol&w=revizor"</script></head><body></body></html>' > gogol/revizor/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=lermontov&w=mcyri"</script></head><body></body></html>' > lermontov/mcyri/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=shekspir&w=romeo_i_dzhuletta"</script></head><body></body></html>' > shekspir/romeo_i_dzhuletta/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=grin&w=alye_parusa"</script></head><body></body></html>' > grin/alye_parusa/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=ekzuperi&w=malenkiy_princ"</script></head><body></body></html>' > ekzuperi/malenkiy_princ/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=shukshin&w=chudik"</script></head><body></body></html>' > shukshin/chudik/index.html
+          
+          echo '<!DOCTYPE html><html><head><meta charset="UTF-8"><script>window.location.href="../../?a=turgenev&w=asya"</script></head><body></body></html>' > turgenev/asya/index.html
+      
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Auto: create structure"
+          git push || true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

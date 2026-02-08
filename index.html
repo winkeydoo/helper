@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Дидактический материал 9 класс</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{--bg:#1a1a1d;--sidebar:#2c3e50;--light:#ecf0f1;--accent:#d35400;--hover:#e67e22;--dark:#2c3e50;--head:'Cormorant Garamond',serif;--body:'Montserrat',sans-serif}
@@ -12,7 +12,7 @@
 *:focus{outline:none}
 body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;overflow:hidden}
 .container{display:flex;height:100vh}
-.menu-btn{display:none;position:fixed;top:15px;left:15px;z-index:1000;background:var(--sidebar);color:#fff;border:none;width:45px;height:45px;border-radius:8px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.menu-btn{display:none;position:fixed;top:15px;left:15px;z-index:1000;background:var(--sidebar);color:#fff;border:none;width:45px;height:45px;border-radius:8px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;box-shadow:0 4px 15px rgba(0,0,0,.3)}
 .menu-btn span{display:block;width:25px;height:3px;background:#fff;border-radius:2px;transition:.3s}
 .menu-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .menu-btn.active span:nth-child(2){opacity:0}
@@ -30,28 +30,57 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 .authors{list-style:none;overflow-y:auto;flex-grow:1}
 .authors::-webkit-scrollbar{width:5px}
 .authors::-webkit-scrollbar-thumb{background:var(--accent);border-radius:5px}
-.authors li{padding:12px 15px;cursor:pointer;border-radius:8px;transition:.3s;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+.authors li{padding:12px 15px;cursor:pointer;border-radius:8px;transition:.3s;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;display:flex;align-items:center;gap:10px}
 .authors li:hover{background:rgba(255,255,255,.1);padding-left:20px;color:var(--accent)}
 .authors li.active{background:var(--accent);color:#fff}
+.authors li i{color:var(--accent);font-size:1.1rem}
+.authors li.active i{color:#fff}
 .main{flex-grow:1;padding:40px;overflow-y:auto;background:#fdfdfd;width:100%;position:relative}
-.cover{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,var(--sidebar) 0%,#1a252f 100%);z-index:2000;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;padding:40px;animation:fadeIn 1s ease}
+.cover{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,var(--sidebar) 0%,#1a252f 50%,#0f1419 100%);z-index:2000;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;text-align:center;padding:40px;overflow-y:auto}
 .cover.hidden{opacity:0;pointer-events:none;transition:opacity .8s ease}
-.cover-content{max-width:800px}
-.cover h1{font-family:var(--head);font-size:4rem;margin-bottom:20px;line-height:1.2}
-.cover h2{font-family:var(--head);font-size:2rem;color:var(--accent);margin-bottom:60px;font-weight:400}
-.credits{background:rgba(255,255,255,.1);border-radius:20px;padding:40px;margin-bottom:60px;border:1px solid rgba(255,255,255,.2)}
-.credit-item{margin-bottom:30px}
+.cover-content{max-width:900px;animation:slideUp 1s ease}
+.cover-icon{font-size:4rem;color:var(--accent);margin-bottom:20px;animation:float 3s ease-in-out infinite}
+.cover h1{font-family:var(--head);font-size:3.5rem;margin-bottom:15px;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.3)}
+.cover-subtitle{font-size:1.3rem;color:var(--accent);margin-bottom:40px;font-weight:300;letter-spacing:2px;text-transform:uppercase}
+.credits{background:rgba(255,255,255,.08);border-radius:20px;padding:35px;margin-bottom:40px;border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px)}
+.credit-item{margin-bottom:25px;position:relative;padding-left:50px;text-align:left}
 .credit-item:last-child{margin-bottom:0}
-.credit-label{font-size:12px;text-transform:uppercase;letter-spacing:2px;opacity:.7;margin-bottom:10px}
-.credit-name{font-size:1.5rem;font-weight:600;margin-bottom:8px}
-.credit-desc{font-size:1rem;opacity:.8;line-height:1.6}
-.cover-btn{padding:18px 50px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:1.1rem;font-weight:500;cursor:pointer;transition:.3s;font-family:var(--body)}
-.cover-btn:hover{background:var(--hover);transform:translateY(-3px);box-shadow:0 10px 30px rgba(211,84,0,.4)}
-.welcome{text-align:center;margin-top:10%;animation:fadeIn 1s ease;padding:20px}
-.welcome h1{font-family:var(--head);font-size:3.5rem;color:var(--sidebar);line-height:1.2}
-.welcome h2{font-family:var(--head);font-size:1.8rem;color:var(--accent);margin-bottom:20px}
-.welcome p{max-width:600px;margin:0 auto 40px;font-size:1.1rem;line-height:1.6;color:#555}
-.welcome .hint{font-size:.9rem;color:#888;margin-top:20px}
+.credit-icon{position:absolute;left:0;top:0;width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.credit-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:.7;margin-bottom:5px}
+.credit-name{font-size:1.4rem;font-weight:600;margin-bottom:5px;color:#fff}
+.credit-desc{font-size:.95rem;opacity:.85;line-height:1.5}
+.cover-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.feature{background:rgba(255,255,255,.05);border-radius:15px;padding:25px 15px;border:1px solid rgba(255,255,255,.1);transition:.3s}
+.feature:hover{background:rgba(255,255,255,.1);transform:translateY(-5px)}
+.feature i{font-size:2rem;color:var(--accent);margin-bottom:15px}
+.feature-title{font-size:.9rem;font-weight:500;line-height:1.4}
+.cover-btn{padding:18px 50px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:1.1rem;font-weight:500;cursor:pointer;transition:.3s;font-family:var(--body);display:inline-flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(211,84,0,.4)}
+.cover-btn:hover{background:var(--hover);transform:translateY(-3px);box-shadow:0 15px 40px rgba(211,84,0,.5)}
+.cover-btn i{font-size:1.2rem;animation:bounce 2s infinite}
+.welcome{text-align:center;margin-top:5%;animation:fadeIn 1s ease;padding:20px}
+.welcome-icon{font-size:5rem;color:var(--accent);margin-bottom:30px;animation:float 4s ease-in-out infinite}
+.welcome h1{font-family:var(--head);font-size:2.8rem;color:var(--sidebar);line-height:1.2;margin-bottom:20px}
+.welcome-intro{max-width:800px;margin:0 auto 50px;text-align:left;background:#fff;border-radius:20px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,.08);position:relative}
+.welcome-intro::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:20px;left:25px;font-size:2rem;color:var(--accent);opacity:.2}
+.intro-text{font-size:1.05rem;line-height:1.9;color:#444;margin-bottom:25px;text-indent:30px}
+.intro-heading{font-family:var(--head);font-size:1.5rem;color:var(--sidebar);margin:30px 0 20px;display:flex;align-items:center;gap:12px}
+.intro-heading i{color:var(--accent);font-size:1.3rem}
+.intro-list{list-style:none;margin-bottom:25px}
+.intro-list li{padding:15px 20px;margin-bottom:12px;background:#f8f9fa;border-radius:12px;border-left:4px solid var(--accent);display:flex;align-items:flex-start;gap:15px;text-align:left;transition:.3s}
+.intro-list li:hover{background:#f0f0f0;transform:translateX(5px)}
+.intro-list li i{color:var(--accent);font-size:1.1rem;margin-top:3px;min-width:20px}
+.intro-list li div{flex:1}
+.intro-list li strong{display:block;margin-bottom:5px;color:var(--dark)}
+.benefits{background:linear-gradient(135deg,var(--sidebar) 0%,var(--dark) 100%);color:#fff;border-radius:20px;padding:35px;margin-top:30px}
+.benefits-title{font-family:var(--head);font-size:1.4rem;margin-bottom:25px;text-align:center}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.benefit{text-align:center;padding:20px;background:rgba(255,255,255,.1);border-radius:15px;transition:.3s}
+.benefit:hover{background:rgba(255,255,255,.15);transform:translateY(-5px)}
+.benefit i{font-size:2rem;color:var(--accent);margin-bottom:15px}
+.benefit-text{font-size:.9rem;line-height:1.5}
+.welcome-closing{font-size:1.1rem;color:var(--accent);font-style:italic;margin-top:30px;font-family:var(--head)}
+.welcome .hint{font-size:.9rem;color:#888;margin-top:30px;display:flex;align-items:center;justify-content:center;gap:10px}
+.welcome .hint i{font-size:1.2rem;color:var(--accent);animation:swing 2s ease-in-out infinite}
 .header-wrap{display:flex;align-items:center;gap:15px;margin-bottom:30px;flex-wrap:wrap}
 .back-btn{padding:10px 20px;background:var(--sidebar);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;display:flex;align-items:center;gap:8px;transition:.3s}
 .back-btn:hover{background:var(--accent)}
@@ -59,7 +88,9 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;animation:slideUp .5s ease}
 .card{background:#fff;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.05);cursor:pointer;transition:.3s;border-left:5px solid var(--sidebar);overflow:hidden}
 .card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1);border-left-color:var(--accent)}
-.card-header{padding:20px}
+.card-header{padding:20px;display:flex;align-items:center;gap:15px}
+.card-icon{width:50px;height:50px;background:var(--sidebar);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;transition:.3s}
+.card:hover .card-icon{background:var(--accent)}
 .card h3{font-family:var(--head);font-size:1.4rem;margin-bottom:5px}
 .card .sub{font-size:.85rem;color:#666}
 .card-body{max-height:0;overflow:hidden;transition:max-height .4s ease-out;background:#f8f9fa}
@@ -78,7 +109,7 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 .video i{color:#e74c3c;font-size:.8rem}
 .video:hover i{color:#fff}
 .btn{margin-top:20px;display:flex;gap:10px}
-.btn button{flex:1;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:var(--body);font-weight:500;transition:.3s;font-size:.9rem;text-align:center}
+.btn button{flex:1;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:var(--body);font-weight:500;transition:.3s;font-size:.9rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn button:hover{background:var(--hover);transform:translateY(-2px)}
 .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(5px);justify-content:center;align-items:center;padding:20px}
 .modal-content{background:#fefefe;border-radius:15px;width:100%;max-width:800px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.3);animation:zoomIn .3s}
@@ -99,12 +130,16 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 .sidebar{position:fixed;height:100vh;width:280px;transform:translateX(-100%)}
 .sidebar.open{transform:translateX(0)}
 .main{padding:80px 20px 20px}
-.cover h1{font-size:2.5rem}
-.cover h2{font-size:1.3rem}
+.cover h1{font-size:2.2rem}
+.cover-subtitle{font-size:1rem}
 .credits{padding:25px}
-.credit-name{font-size:1.2rem}
-.welcome h1{font-size:2.2rem}
-.welcome h2{font-size:1.3rem}
+.credit-item{padding-left:0;text-align:center}
+.credit-icon{position:relative;margin:0 auto 15px}
+.cover-features{grid-template-columns:1fr}
+.welcome h1{font-size:2rem}
+.welcome-intro{padding:25px}
+.benefits-grid{grid-template-columns:1fr}
+.welcome-intro::before{display:none}
 .header-wrap{flex-direction:column;align-items:flex-start}
 .header{font-size:1.8rem}
 .grid{grid-template-columns:1fr}
@@ -113,29 +148,40 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 .modal-head h2{font-size:1.4rem}
 }
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes swing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
 </style>
 </head>
 <body>
 
 <div class="cover" id="cover">
 <div class="cover-content">
+<div class="cover-icon"><i class="fas fa-book-open"></i></div>
 <h1>Дидактический материал</h1>
-<h2>по русской литературе 9 класс</h2>
+<div class="cover-subtitle">Русская литература 9 класс</div>
+<div class="cover-features">
+<div class="feature"><i class="fas fa-book-reader"></i><div class="feature-title">Тексты произведений</div></div>
+<div class="feature"><i class="fas fa-film"></i><div class="feature-title">Экранизации</div></div>
+<div class="feature"><i class="fas fa-theater-masks"></i><div class="feature-title">Спектакли</div></div>
+</div>
 <div class="credits">
 <div class="credit-item">
+<div class="credit-icon"><i class="fas fa-user-graduate"></i></div>
 <div class="credit-label">Сайт составлен</div>
 <div class="credit-name">Алиханом</div>
 <div class="credit-desc">учеником 8 класса</div>
 </div>
 <div class="credit-item">
+<div class="credit-icon"><i class="fas fa-chalkboard-teacher"></i></div>
 <div class="credit-label">Проверено</div>
 <div class="credit-name">Жибек Амантаевной</div>
-<div class="credit-desc">учителем русского языка и литературы<br>с более чем 40-летним стажем</div>
+<div class="credit-desc">учителем русского языка и литературы с более чем 40 летним стажем</div>
 </div>
 </div>
-<button class="cover-btn" onclick="enterSite()"><i class="fas fa-book-open"></i> Перейти к материалам</button>
+<button class="cover-btn" onclick="enterSite()"><i class="fas fa-arrow-right"></i> Перейти к материалам</button>
 </div>
 </div>
 
@@ -157,10 +203,28 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 
 <main class="main" id="main">
 <div class="welcome" id="welcome">
+<div class="welcome-icon"><i class="fas fa-graduation-cap"></i></div>
 <h1>9 класс</h1>
-<h2>Мировая литература и русская проза</h2>
-<p>Шекспир, Грин, Экзюпери, Шукшин, Тургенев, Пушкин</p>
-<div class="hint"><i class="fas fa-bars"></i> Выберите автора в меню слева</div>
+<div class="welcome-intro">
+<p class="intro-text">Представляем вашему вниманию дидактический материал к учебнику русской литературы для 9 класса, который поможет сделать процесс изучения литературных произведений более наглядным, интересным и эффективным.</p>
+<p class="intro-text">Основная цель данного материала создание благоприятных условий для глубокого погружения учащихся в художественные тексты, понимания их идейно тематического содержания, а также особенностей литературного языка и стиля авторов.</p>
+<div class="intro-heading"><i class="fas fa-list-check"></i>В состав дидактического материала входят</div>
+<ul class="intro-list">
+<li><i class="fas fa-book"></i><div><strong>Тексты художественных произведений</strong>представленные как в печатном, так и в электронном виде. Это позволит учащимся не только работать с книгой, но и обращаться к электронным ресурсам, что соответствует современным требованиям к организации образовательного процесса.</div></li>
+<li><i class="fas fa-video"></i><div><strong>Экранизации и театральные постановки</strong>изучаемых произведений. Знакомство с визуальными интерпретациями текстов поможет школьникам глубже прочувствовать образы героев, представить атмосферу и колорит изображаемой эпохи.</div></li>
+<li><i class="fas fa-palette"></i><div><strong>Иллюстрации к произведениям</strong>выполненные профессиональными художниками. Визуальные образы будут способствовать более яркому восприятию литературных текстов, развивать образное мышление учащихся.</div></li>
+</ul>
+<div class="benefits">
+<div class="benefits-title">Использование данного дидактического материала будет способствовать</div>
+<div class="benefits-grid">
+<div class="benefit"><i class="fas fa-brain"></i><div class="benefit-text">более глубокому пониманию учащимися литературных произведений</div></div>
+<div class="benefit"><i class="fas fa-lightbulb"></i><div class="benefit-text">развитию их творческого воображения и образного мышления</div></div>
+<div class="benefit"><i class="fas fa-heart"></i><div class="benefit-text">повышению интереса к чтению и изучению русской классической литературы</div></div>
+</div>
+</div>
+<p class="welcome-closing">Надеемся, что предлагаемый дидактический материал поможет вам сделать уроки русской литературы увлекательными, насыщенными и эффективными.</p>
+</div>
+<div class="hint"><i class="fas fa-hand-point-left"></i>Выберите автора в меню слева</div>
 </div>
 </main>
 </div>
@@ -181,22 +245,22 @@ body{font-family:var(--body);background:#f4f4f4;color:var(--dark);height:100vh;o
 
 <script>
 const data=[
-{n:"Александр Сергеевич Пушкин",id:"pushkin",w:[
+{n:"Александр Сергеевич Пушкин",id:"pushkin",icon:"fa-feather",w:[
 {t:"Цыганы",h:"Поэма 1824 года. Развенчание мифа о «естественном человеке».",txt:"https://ilibrary.ru/text/445/index.html",aud:["https://www.youtube.com/watch?v=Xg4lQKtF7og","https://www.youtube.com/watch?v=9xJqPUXOvio"],the:["https://www.youtube.com/watch?v=mazh5MGA9pE"],mov:[],img:"https://www.google.com/search?tbm=isch&q=цыганы+пушкин"}
 ]},
-{n:"Уильям Шекспир",id:"shekspir",w:[
+{n:"Уильям Шекспир",id:"shekspir",icon:"fa-masks-theater",w:[
 {t:"Ромео и Джульетта",h:"Трагедия около 1595 года. Символ любви.",txt:"https://ilibrary.ru/text/4550/p.1/index.html",aud:["https://www.youtube.com/watch?v=6qbRjngnXJ8"],the:["https://www.youtube.com/watch?v=0G6Kbg79g9A"],mov:["https://www.youtube.com/watch?v=IWpBgAvHcj8"],img:"https://www.google.com/search?tbm=isch&q=ромео+и+джульетта"}
 ]},
-{n:"Александр Грин",id:"grin",w:[
+{n:"Александр Грин",id:"grin",icon:"fa-ship",w:[
 {t:"Алые паруса",h:"Повесть 1923 года. Символ исполнившейся мечты.",txt:"https://ilibrary.ru/text/1845/p.1/index.html",aud:["https://www.youtube.com/watch?v=VYQi1Bc2U14"],the:["https://www.youtube.com/watch?v=i0h6tllIEmE"],mov:["https://www.youtube.com/watch?v=5YzwW4hxrx4"],img:"https://www.google.com/search?tbm=isch&q=алые+паруса"}
 ]},
-{n:"Антуан де Сент-Экзюпери",id:"ekzuperi",w:[
+{n:"Антуан де Сент-Экзюпери",id:"ekzuperi",icon:"fa-plane",w:[
 {t:"Маленький принц",h:"Повесть 1942 года. Философская сказка.",txt:"https://deti-online.com/skazki/malenkiy-princ/",aud:["https://www.youtube.com/watch?v=DUJlTHXWGNE"],the:["https://www.youtube.com/watch?v=S5Rt9AaGgbw"],mov:["https://www.youtube.com/watch?v=BNAVhxwdJEE"],img:"https://www.google.com/search?tbm=isch&q=маленький+принц"}
 ]},
-{n:"В.М. Шукшин",id:"shukshin",w:[
+{n:"В.М. Шукшин",id:"shukshin",icon:"fa-house-user",w:[
 {t:"Чудик",h:"Рассказ о деревенских людях.",txt:"https://lib.ru/SHUKSHIN/shukshin_chudik.txt",aud:["https://www.youtube.com/watch?v=hfKeg-58rPo"],the:[],mov:[],img:"https://www.google.com/search?tbm=isch&q=чудик+шукшин"}
 ]},
-{n:"Иван Сергеевич Тургенев",id:"turgenev",w:[
+{n:"Иван Сергеевич Тургенев",id:"turgenev",icon:"fa-leaf",w:[
 {t:"Ася",h:"Повесть 1858 года. О «лишних людях».",txt:"https://ilibrary.ru/text/1097/p.1/index.html",aud:["https://www.youtube.com/watch?v=r7murt_YLYE"],the:[],mov:[],img:"https://www.google.com/search?tbm=isch&q=ася+тургенев"}
 ]}
 ];
@@ -232,7 +296,7 @@ function slug(s){const m={'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e',
 
 function goHome(){
 currentAuthor=null;
-document.getElementById('main').innerHTML='<div class="welcome" id="welcome"><h1>9 класс</h1><h2>Мировая литература и русская проза</h2><p>Шекспир, Грин, Экзюпери, Шукшин, Тургенев, Пушкин</p><div class="hint"><i class="fas fa-bars"></i> Выберите автора в меню слева</div></div>';
+document.getElementById('main').innerHTML='<div class="welcome" id="welcome"><div class="welcome-icon"><i class="fas fa-graduation-cap"></i></div><h1>9 класс</h1><div class="welcome-intro"><p class="intro-text">Представляем вашему вниманию дидактический материал к учебнику русской литературы для 9 класса, который поможет сделать процесс изучения литературных произведений более наглядным, интересным и эффективным.</p><p class="intro-text">Основная цель данного материала создание благоприятных условий для глубокого погружения учащихся в художественные тексты, понимания их идейно тематического содержания, а также особенностей литературного языка и стиля авторов.</p><div class="intro-heading"><i class="fas fa-list-check"></i>В состав дидактического материала входят</div><ul class="intro-list"><li><i class="fas fa-book"></i><div><strong>Тексты художественных произведений</strong>представленные как в печатном, так и в электронном виде. Это позволит учащимся не только работать с книгой, но и обращаться к электронным ресурсам, что соответствует современным требованиям к организации образовательного процесса.</div></li><li><i class="fas fa-video"></i><div><strong>Экранизации и театральные постановки</strong>изучаемых произведений. Знакомство с визуальными интерпретациями текстов поможет школьникам глубже прочувствовать образы героев, представить атмосферу и колорит изображаемой эпохи.</div></li><li><i class="fas fa-palette"></i><div><strong>Иллюстрации к произведениям</strong>выполненные профессиональными художниками. Визуальные образы будут способствовать более яркому восприятию литературных текстов, развивать образное мышление учащихся.</div></li></ul><div class="benefits"><div class="benefits-title">Использование данного дидактического материала будет способствовать</div><div class="benefits-grid"><div class="benefit"><i class="fas fa-brain"></i><div class="benefit-text">более глубокому пониманию учащимися литературных произведений</div></div><div class="benefit"><i class="fas fa-lightbulb"></i><div class="benefit-text">развитию их творческого воображения и образного мышления</div></div><div class="benefit"><i class="fas fa-heart"></i><div class="benefit-text">повышению интереса к чтению и изучению русской классической литературы</div></div></div></div><p class="welcome-closing">Надеемся, что предлагаемый дидактический материал поможет вам сделать уроки русской литературы увлекательными, насыщенными и эффективными.</p></div><div class="hint"><i class="fas fa-hand-point-left"></i>Выберите автора в меню слева</div></div>';
 document.querySelectorAll('.authors li').forEach(i=>i.classList.remove('active'));
 const url=new URL(window.location);
 url.search='';
@@ -246,7 +310,7 @@ data.forEach(a=>{
 const match=!q||a.n.toLowerCase().includes(q.toLowerCase());
 if(match){
 const li=document.createElement('li');
-li.textContent=a.n;
+li.innerHTML=`<i class="fas ${a.icon}"></i><span>${a.n}</span>`;
 li.onclick=()=>{
 document.querySelectorAll('.authors li').forEach(i=>i.classList.remove('active'));
 li.classList.add('active');
@@ -269,7 +333,14 @@ a.w.forEach((w,i)=>{
 const ha=w.aud.length,ht=w.the.length,hm=w.mov.length;
 const ws=slug(w.t);
 const active=wid===ws?'open':'';
-html+=`<div class="card"><div class="card-header" onclick="toggleCard(this,'${ws}')"><h3>${w.t}</h3><div class="sub">Нажмите для подробностей</div></div><div class="card-body ${active}" id="body-${ws}"><div class="card-inner"><div class="history">${w.h}</div><div class="links"><a href="${w.txt}" target="_blank" class="link"><i class="fas fa-book-reader"></i><span>Читать текст</span></a>${ha?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-headphones"></i><span>Аудиокнига${ha>1?' ('+ha+')':''}</span>${ha>1?'<span class="badge">'+ha+'</span>':''}</div><div class="videos">${w.aud.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Вариант ${j+1}</a>`).join('')}</div></div>`:''}${ht?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-theater-masks"></i><span>Спектакль${ht>1?' ('+ht+')':''}</span></div><div class="videos">${w.the.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Постановка ${j+1}</a>`).join('')}</div></div>`:''}${hm?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-film"></i><span>Экранизация${hm>1?' ('+hm+')':''}</span>${hm>1?'<span class="badge">'+hm+'</span>':''}</div><div class="videos">${w.mov.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Фильм ${j+1}</a>`).join('')}</div></div>`:''}${w.img?`<a href="${w.img}" target="_blank" class="link"><i class="fas fa-images"></i><span>Иллюстрации</span></a>`:''}</div><div class="btn"><button onclick="openModal('${a.id}',${i},event)"><i class="fas fa-expand"></i>Подробнее</button></div></div></div></div>`;
+let icon='fa-book';
+if(a.id==='pushkin')icon='fa-feather';
+if(a.id==='shekspir')icon='fa-masks-theater';
+if(a.id==='grin')icon='fa-ship';
+if(a.id==='ekzuperi')icon='fa-plane';
+if(a.id==='shukshin')icon='fa-house-user';
+if(a.id==='turgenev')icon='fa-leaf';
+html+=`<div class="card"><div class="card-header" onclick="toggleCard(this,'${ws}')"><div class="card-icon"><i class="fas ${icon}"></i></div><div><h3>${w.t}</h3><div class="sub">Нажмите для подробностей</div></div></div><div class="card-body ${active}" id="body-${ws}"><div class="card-inner"><div class="history">${w.h}</div><div class="links"><a href="${w.txt}" target="_blank" class="link"><i class="fas fa-book-reader"></i><span>Читать текст</span></a>${ha?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-headphones"></i><span>Аудиокнига${ha>1?' ('+ha+')':''}</span>${ha>1?'<span class="badge">'+ha+'</span>':''}</div><div class="videos">${w.aud.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Вариант ${j+1}</a>`).join('')}</div></div>`:''}${ht?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-theater-masks"></i><span>Спектакль${ht>1?' ('+ht+')':''}</span></div><div class="videos">${w.the.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Постановка ${j+1}</a>`).join('')}</div></div>`:''}${hm?`<div class="link" style="flex-direction:column;align-items:flex-start;"><div style="display:flex;align-items:center;gap:10px;width:100%;"><i class="fas fa-film"></i><span>Экранизация${hm>1?' ('+hm+')':''}</span>${hm>1?'<span class="badge">'+hm+'</span>':''}</div><div class="videos">${w.mov.map((l,j)=>`<a href="${l}" target="_blank" class="video"><i class="fas fa-play-circle"></i>Фильм ${j+1}</a>`).join('')}</div></div>`:''}${w.img?`<a href="${w.img}" target="_blank" class="link"><i class="fas fa-images"></i><span>Иллюстрации</span></a>`:''}</div><div class="btn"><button onclick="openModal('${a.id}',${i},event)"><i class="fas fa-expand"></i>Подробнее</button></div></div></div></div>`;
 });
 html+='</div>';
 m.innerHTML=html;
